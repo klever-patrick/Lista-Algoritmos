@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>17. Uma loja paga a seus estagiários 30 reais por dia trabalhado. A mesma loja paga a
+seus vendedores 600 reais mais uma comissão de 10% sobre seu total de vendas (em
+reais). Escreva um programa que:
+<ol type="a">
+<li>Solicite que o usuário digite “e” caso seja estagiário ou “v” caso seja vendedor,
+armazenando o valor digitado no tipo adequado de variável;</li>
+<li>Solicite que usuário digite o total de vendas (em reais) e calcule corretamente o
+salário de um vendedor se, E SOMENTE SE, o usuário houver digitado “v”;</li>
+<li>Solicite que usuário digite a quantidade de dias trabalhados e calcule corretamente
+o salário de um estagiário se, E SOMENTE SE, o usuário houver digitado “e”;</li>
+<li>Imprima na tela corretamente o salário do usuário de acordo com seu cargo.</li>
+</ol>
+</p>
+<hr>
+<script>
+function mostra (frase) {
+	document.write(frase + "<br>");
+}
+var cargo = prompt("Digite 'e' se for estagiário e 'v' se for vendedor");
+if (cargo == 'v'){
+	var vendas = parseInt(prompt("Digite o seu total de vendas"));
+	var salarioVendedor = 600 + (vendas * 10 / 100);
+	mostra("Cargo: vendedor");
+	mostra("Quantidade de vendas: "+vendas);
+	mostra("Salário: "+salarioVendedor);
+}
+	if (cargo == 'e') {
+		var dias = parseInt(prompt("Quantos dias você trabalhou?"));
+		var salarioEstagiario = 30 * dias;
+		mostra("Cargo: estagiário");
+		mostra("Dias trabalhados: "+dias);
+		mostra("Salário: "+salarioEstagiario);
+	}
+</script>

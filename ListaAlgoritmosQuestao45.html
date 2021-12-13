@@ -1,0 +1,37 @@
+<meta charset="UTF-8">
+<h1>Algoritmos e Programação de Computadores<h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>45. Cinco candidatos disputam uma eleição. Escreva um programa que leia os votos de 10
+eleitores, contabilizando a quantidade de votos em cada candidato em um vetor e
+informe o candidato vencedor ao final.</p>
+<hr>
+<script>
+function mostra(frase) {
+	document.write(frase + "<br>");
+}
+var candidatos = [0,0,0,0,0];
+var i = 0;
+var votos;
+while (i<10) {
+	votos = parseInt(prompt("Informe o seu voto."));
+	candidatos[votos] =  candidatos[votos] + 1;
+	i++;
+}
+var maior = 1;
+var aux = 0;
+while (aux<4) {
+	if (candidatos[aux] > maior) {
+		maior = candidatos[aux];
+		var vencedor = aux;
+	}
+	aux++;
+}
+
+mostra("Votos recebidos pelo candidato 0: "+candidatos[0]);
+mostra("Votos recebidos pelo candidato 1: "+candidatos[1]);
+mostra("Votos recebidos pelo candidato 2: "+candidatos[2]);
+mostra("Votos recebidos pelo candidato 3: "+candidatos[3]);
+mostra("Votos recebidos pelo candidato 4: "+candidatos[4]);
+mostra("O candidato "+vencedor+" venceu a eleição com "+maior+" votos.");
+</script>

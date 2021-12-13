@@ -1,0 +1,131 @@
+<meta charset="UTF-8">
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Aluno: Patrick Oliveira V. Monteiro</h2>
+<hr>
+<p>54. Uma fábrica de calçados é composta por trabalhadores classificados em três perfis de 
+produtividade de acordo com a quantidade de peças produzidas como mostra a tabela abaixo.
+<table border = "2">
+    <tr>
+        <th>Perfil de Produtividade</th>
+        <th>Quantidade de peças produzidas</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Até 30</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>De 31 a 50</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Acima de 50</td>
+    </tr>
+</table>
+Os trabalhadores da classe 1 recebem um salário mínimo de R$880,00 sem
+adicional. Os da classe 2 recebem o salário mínimo mais um adicional de 2% deste
+salário por cada peça produzida acima das 30 peças iniciais. Os da classe 3, recebem
+o salário mínimo mais um adicional de 4% desse salário por cada peça produzida
+acima das 30 peças iniciais. Escreva um programa em JavaScript que:
+<ol type = "a"> 
+    <li>Leia pelo teclado e armazene na primeira coluna de uma matriz 5x3 a
+quantidade de peças produzidas por 5 funcionários;</li>
+    <li>Calcule e armazene na segunda coluna dessa matriz o adicional recebido por
+cada funcionário de acordo com seu perfil de produtividade;</li>
+    <li>Calcule e armazene na terceira coluna da matriz o salário recebido por cada
+funcionário respectivamente;</li>
+    <li>Calcule e mostre na tela quanto a fábrica gastou com a folha salarial;</li>
+    <li>Calcule e mostre na tela a quantidade de peças produzidas.</li>
+</ol>
+Exemplo:
+<table border = "1">
+    <tr>
+        <th></th>
+        <th>Peças Produzidas(un.)</th>
+        <th>Adicional (R$)</th>
+        <th>Salário (R$)</th>
+    </tr>
+    <tr>
+        <td>Funcionário 1</td>
+        <td>20</td>
+        <td>0,00</td>
+        <td>880,00</td>
+    </tr>
+    <tr>
+        <td>Funcionário 2</td>
+        <td>31</td>
+        <td>17,60</td>
+        <td>897,60</td>
+    </tr>
+    <tr>  
+        <td>Funcionário 3</td>
+        <td>35</td>
+        <td> 88,00</td>
+        <td>968,00</td>
+    </tr>
+    <tr> 
+        <td>Funcionário 4</td>
+        <td>50 </td>
+        <td>352,00</td>
+        <td>1232,00</td>
+    </tr>
+    <tr>   
+        <td>Funcionário 5</td>
+        <td>51</td>
+        <td>739,20</td>
+        <td>1619,20</td>
+    </tr>
+</table>
+Folha Salarial: R$ 5596,80.<br>
+Peças Produzidas: 187 unidades.
+</p>
+<hr>
+<script>
+function mostra (frase) {
+    document.write(frase + "<br>");
+}
+var m = new Array(5);
+for (var i = 0; i<5; i++) {
+    m[i] = new Array(3);
+}
+for (var x1 = 0; x1<5; x1++) {
+    m[x1][0] = parseInt(prompt("Digite a quantidade de peças produzidas."));
+}
+for (var linha = 0; linha<5; linha++) {
+    if (m[linha][0]<=30) {
+        var p = 0.00;
+    }
+    if (m[linha][0]>30 && m[linha][0]<=50)  {
+        var p = 0.02;
+    }
+    if (m[linha][0]>50) {
+        var p = 0.04;
+    }
+    m[linha][1] = ((m[linha][0]-30)*p*880).toFixed(2);
+}
+for (var LINHA = 0; LINHA<5; LINHA++) {
+    m[LINHA][2] = (880 + parseFloat(m[LINHA][1])).toFixed(2);
+}
+var valores = 0;
+for (var x = 0; x<5; x++) {
+    for (var y = 0; y<3; y++) {
+        if (y < 2) {
+            valores = valores + m[x][y] + " ";
+        }
+        else {
+            valores = valores + m[x][y] + "<br>";
+        }
+    }
+}
+mostra(valores);
+var salario = 0;
+for (var x2 = 0; x2<5; x2++) {
+    salario = salario + parseFloat(m[x2][2]);
+}
+mostra("Folha Salarial: R$ "+salario.toFixed(2)+".");
+var pecas = 0;
+for (var x3 = 0; x3<5; x3++) {
+    pecas = pecas + parseInt(m[x3][0]);
+}
+mostra("Peças Produzidas: "+pecas+" unidades.");
+</script>

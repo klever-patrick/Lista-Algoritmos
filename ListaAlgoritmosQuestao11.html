@@ -1,0 +1,29 @@
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>11. Suponha que você trabalhe em uma obra de construção civil onde não ocorrem
+acidentes há 1000 horas e lhe é dada a tarefa de exibir em um letreiro esta quantidade
+convertida para semanas, dias e horas (5 semanas, 6 dias e 16 horas). Escreva um
+programa que realize a conversão solicitada para qualquer valor de entrada. O
+programa deve ler pelo teclado a quantidade de horas sem acidentes e imprimir na tela
+o valor correspondente em semanas inteiras, dias inteiros avulsos e horas avulsas.</p>
+<hr>
+<script>
+function mostra (frase) {
+    document.write(frase + "<br>");
+}
+// Entrada
+var acidentes = parseInt(prompt("Não há acidentes há quanto tempo?(em horas)"));
+var semanas = 168;
+var dias = 24;
+var horas = 1;
+// Processamento
+semanas = parseInt(acidentes / semanas);
+dias = parseInt((acidentes%(semanas*168)) / dias);
+horas = parseInt(acidentes - ((semanas * 168) + (dias * 24)));
+// Saída
+mostra("Tempo total sem acidentes em horas: "+acidentes);
+mostra("Semanas sem acidentes: "+semanas);
+mostra("Dias sem acidentes: "+dias);
+mostra("Horas sem acidentes: "+horas);
+</script>

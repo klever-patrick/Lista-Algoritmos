@@ -1,0 +1,43 @@
+<meta charset = "UTF-8">
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>33. Escreva um programa que leia a idade e o sexo de alguns alunos e mostre as
+seguintes informações:
+<ol type = "a">
+<li> Idade do aluno mais novo.</li>
+<li> Média de idade da turma.</li>
+<li> Média de idade das mulheres.</li>
+</ol>
+Obs: A cada leitura relativa a um aluno, o programa deve questionar se o usuário
+deseja ou não continuar, mostrando as informações e encerrando em caso negativo.</p> 
+<hr>
+<script>
+function mostra (frase) {
+    document.write(frase + "<br>");
+}
+var opcao = 's', idade, sexo;
+var menor = 10000;
+var soma = 0;
+var somaF = 0;
+var contador = 0;
+var contadora = 0;
+while (opcao == 's') {
+    contador = contador + 1;
+    idade = parseInt(prompt("Digite sua idade."));
+    soma = soma + idade;
+    if (idade<menor) {
+        menor = idade;
+    }
+    sexo = prompt("Digite o sexo (m/f).");
+    if (sexo == 'f') {
+        var somaF = somaF + idade;
+        var contadora = contadora + 1;
+        var mediaMulheres = somaF / contadora;
+    }
+    opcao = prompt("Deseja continuar (s/n).");
+}
+mostra("Idade do aluno mais novo: "+menor);
+mostra("Média de idade da turma: "+soma/contador);
+mostra("Média de idade das mulheres: "+mediaMulheres);
+</script>

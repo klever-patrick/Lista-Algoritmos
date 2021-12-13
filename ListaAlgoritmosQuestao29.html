@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>29. Escreva um programa que leia um número e mostre se ele é primo ou não.</p>
+<hr>
+<script>
+var n = parseInt(prompt("Digite um número"));
+var divisores = 0;
+for (var contador=1; contador<=n; contador++) {   
+    if (n%contador==0) {
+       divisores++;
+    }
+}
+if (divisores==2){
+    document.write(n+" é um número primo."); 
+}  
+else {
+    document.write(n+" não é um número primo.");
+}
+</script>

@@ -1,0 +1,25 @@
+<meta charset = "UTF-8">
+<h1>Algortimos e programação de computadores</h1>
+<h2>Aluno: Patrick O. V. Monterio</h2>
+<hr>
+<p>35. Considere a situação hipotética:
+<ul>
+<li>Somos um casal de coelhinhos filhotes.</li>
+<li>Em um mês, amadureceremos.</li>
+<li>Em dois meses, geraremos um casal de coelhinhos e seremos 2 casais ao todo.</li>
+<li>Em três meses, geraremos outro casal de coelhinhos e seremos 3 casais ao todo: nós, nossos filhotes recém-gerados, e nossos filhotes
+veteranos, gerados no mês anterior, os quais já terão amadurecido e
+darão cria a outro casal no mês seguinte...</li>
+</ul>
+Escreva um programa que informe quantos serão os casais membros da nossa família
+de roedores após “n” meses em que o valor de “n” é lido pelo teclado?</p>
+<hr>
+<script>
+var casal = 2;
+var n = parseInt(prompt("Digite a quantidade de meses que já se passaram."));
+if (n>0) {
+    var coelhos = casal + ((n - 1) * 2);
+    var qntCasais = coelhos / 2;
+}
+document.write("Quantidade de casais de coelhos depois de "+n+" meses: "+qntCasais);
+</script>

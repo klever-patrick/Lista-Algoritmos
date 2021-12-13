@@ -1,0 +1,53 @@
+<meta charset="UTF-8">
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>23. Escreva um programa que:
+<ol type ="a">
+<li>Leia pelo teclado a média semestral de um aluno e armazene-a no tipo adequado
+de variável;</li>
+<li>Exiba uma mensagem informando a aprovação deste aluno se, E SOMENTE SE, o
+aluno tiver obtido uma média semestral maior ou igual a 8,0 pontos;</li>
+<li>Exiba uma mensagem informando a reprovação deste aluno se, E SOMENTE SE, o
+aluno tiver obtido uma média semestral menor que 4,0 pontos;</li>
+<li>Caso a média semestral do aluno seja maior ou igual a 4,0 e menor que 8,0 pontos,
+E SOMENTE NESTE CASO, exiba uma mensagem informando que o aluno deve
+fazer avaliação final, leia pelo teclado a nota obtida pelo aluno nesta avaliação e,
+ALÉM DISSO, informe na tela se o aluno foi aprovado ou não conforme as seguintes
+regras:</li>
+<ol type="I">
+<li>A média aritmética entre o valor da média semestral e a nota na avaliação
+final deve ser, no mínimo, 5,0.</li>
+<li>A nota na avaliação final não pode ser inferior a 4,0.</li>
+</ol>
+</ol>
+</p>
+<hr>
+<script>
+function mostra(frase) {
+    document.write(frase + "<br>");
+}
+var media = parseFloat(prompt("Qual a sua média semestral?"));
+if (media>=8){
+    mostra("Você foi aprovado com média semestral igual a: "+media);
+}
+if (media<4){
+    mostra("Você foi reprovado com média semestral igual a: "+media);
+}
+if (media>=4 && media <8) {
+    alert("Sua média semestral foi: "+media+". Você terá de fazer a avaliação final.");
+    var avf = parseFloat(prompt("Qual a nota que você obteve na avalição final?"));
+    if (avf>=4) {
+        var Maritmetica = (media+avf) / 2;
+        if (Maritmetica >= 5) {
+            mostra("Você foi aprovado na avaliação final com nota igual a "+avf+", pois a média aritmética entre o valor da média semestral e a nota na avaliação final foi: "+Maritmetica);
+        }
+        else {
+            mostra("Você foi reprovado na avaliação final com nota igual a "+avf+", pois a média aritmética entre o valor da média semestral e a nota na avaliação final foi: "+Maritmetica);    
+        }
+    }
+    else {
+        mostra("Você foi reprovado na avaliação final com nota igual a: "+avf);
+    }
+}
+</script>

@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+<h1>Algoritmos e Programação de Computadores<h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>9. Escreva um programa que leia o horário (hora e minuto) de início e de término de um
+evento e:</p>
+<ol type="a">
+<li>Mostre a duração do evento em minutos.</li>
+<li>Mostre a duração do evento no formato (hora:minuto).</li>
+</ol>
+<hr>
+<script>
+function mostra(frase) {
+	document.write(frase + "<br>");
+}
+// Entrada
+var hi = parseInt(prompt("Informe a hora de início do evento."));
+var mi = parseInt(prompt("Informe o minuto de início do evento."));
+var ht = parseInt(prompt("Informe a hora de término do evento."));
+var mt = parseInt(prompt("Informe o minuto de término do evento."));
+// Processamento 
+var duracaoEvento = ((ht * 60) + mt) - ((hi * 60) + mi);
+var duracaoHoras = parseInt(duracaoEvento / 60);
+var duracaoMinutos = duracaoEvento % 60;
+// Saída
+mostra("Horário de início do evento: "+hi+":"+mi+"h");
+mostra("Horário de término do evento: "+ht+":"+mt+"h");
+mostra("Duração do evento em minutos: "+duracaoEvento);
+mostra("Duração do evento no formato (hora:minuto): "+duracaoHoras+":"+duracaoMinutos+"h");
+</script>

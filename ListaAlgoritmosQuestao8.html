@@ -1,0 +1,16 @@
+<meta charset="UTF-8">
+<h1>Algoritmos e Programação de Computadores<h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+8. Escreva um programa que leia uma temperatura em graus Celsius e exiba a
+temperatura na escala Fahrenheit.
+<hr>
+<script>
+function mostra(frase) {
+	document.write(frase + "<br>");
+}
+var temperaturaCelsius = parseFloat(prompt("Digite uma temperatura em Celsius"));
+var temperaturaFahrenheit = (1.8 * temperaturaCelsius) + 32;
+mostra("Temperatura em Celsius: "+temperaturaCelsius);
+mostra("Temperatura em Fahrenheit: "+temperaturaFahrenheit);
+</script>

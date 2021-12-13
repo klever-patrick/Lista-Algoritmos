@@ -1,0 +1,21 @@
+<meta charset = "UTF-8">
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>40. O programa abaixo lê pelo teclado uma base “b” e um expoente “e” inteiros, informando o resultado da potenciação be. Implemente a função “potencia” de modo que o
+programa funcione adequadamente. Não deverão ser utilizadas funções matemáticas prontas (por exemplo, as funções da biblioteca math.h).</p>
+<hr>
+<script>
+var b = parseInt(prompt("Digite um número para ser a base."));
+var e = parseInt(prompt("Digite um número para ser o expoente."));
+function exponencial (b, e) {
+	var contador = 0;
+	var produto = 1;
+	while (contador<e) { 
+		produto = produto * b; 
+		contador++;
+	}
+	return produto;
+}
+document.write(b+" elevado a "+e+" é: "+exponencial(b, e));
+</script>

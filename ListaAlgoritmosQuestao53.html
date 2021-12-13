@@ -1,0 +1,101 @@
+<meta charset="UTF-8">
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Aluno: Patrick Oliveira V. Monteiro</h2>
+<hr>
+<p>53. O professor de uma pequena sala de aula, dispõe as notas dos seus 5 alunos em cada uma das 4 avaliações aplicadas em uma tabela conforme o modelo abaixo.
+<table border = "1">
+    <tr>   
+        <td></td>
+        <td>NP1 Escrita</td>
+        <td>NP1 Prática</td>
+        <td>NP2 Escrita</td>
+        <td>NP2 Prática</td>
+    </tr>
+    <tr>
+        <td>Aluno 0</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Aluno 1</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Aluno 2</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Aluno 3</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Aluno 4</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+Escreva um programa que utilize uma matriz 5 x 4 para realizar cada uma das
+seguintes tarefas:
+<ol type = "a">
+    <li>Leia as notas dos alunos;</li>
+    <li>Informe a média do “Aluno 4” ao longo do semestre de acordo com os valores constantes na matriz;</li>
+    <li>Informe a média da turma na “NP2 Prática”;</li>
+    <li>Informe a média geral da turma em todas as provas.</li>
+</ol>
+</p>
+<hr>
+<script>
+// item a
+function mostra (frase) {
+    document.write(frase + "<br>");
+}
+var notas = new Array(5);
+for (var i = 0; i<5; i++) {
+    notas[i] = new Array(4);
+}
+var notinhas = 0;
+var somaGeral = 0;
+for (var x = 0; x<5; x++) {
+    for (var y = 0; y<4; y++) {
+        notas[x][y] = parseInt(prompt("Digite uma nota."));
+        somaGeral = somaGeral + notas[x][y];
+        if (y < 3) {
+            notinhas = notinhas + notas[x][y] + " ";
+        }
+        else {
+            notinhas = notinhas + notas[x][y] + "<br>";
+        }
+    }
+}
+mostra(notinhas);
+// item b
+var soma = 0;
+for (var y1 = 0; y1<4; y1++) {
+    soma = soma + notas[4][y1];
+}
+var mediaAluno4 = soma / 4;
+mostra("Média do semestre do aluno 4: "+mediaAluno4);
+// item c
+var somaNP2 = 0;
+for (var x1 = 0; x1<5; x1++) {
+    somaNP2 = somaNP2 + notas[x1][3];
+}
+var mediaNP2 = somaNP2 / 5;
+mostra("Média da turma na NP2 prática: "+mediaNP2);
+// item d
+var mediaGeral = somaGeral / 20;
+mostra("Média geral da turma em todas as provas: "+mediaGeral);
+</script>

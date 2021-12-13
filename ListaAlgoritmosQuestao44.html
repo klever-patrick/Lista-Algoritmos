@@ -1,0 +1,116 @@
+<meta charset = "UTF-8">
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>44. Sabe-se que na ausência de forças externas o centro de massa de um sistema de
+partículas se move a uma velocidade constante. A tabela abaixo representa um
+sistema com 4 partículas, sendo as colunas <b>x</b> e <y>y</y> as coordenadas espaciais de
+partícula em determinado instante e a coluna <b>m</b> suas respectivas massas.
+<table border="1">
+	<tr>
+        <td></td>
+		<td>X</td>
+		<td>Y</td>
+		<td>M</td>
+    </tr>
+    <tr>
+        <td>Partícula 1</td>
+		<td>0</td>
+		<td>0</td>
+		<td>1</td>
+    </tr>
+    <tr>
+        <td>Partícula 2</td>
+		<td>0</td>
+		<td>1</td>
+		<td>4</td>
+    </tr>
+    <tr>
+        <td>Partícula 3</td>
+		<td>1</td>
+		<td>1</td>
+		<td>8</td>
+	</tr>
+	<tr>
+        <td>Partícula 4</td>
+		<td>1</td>
+		<td>0</td>
+		<td>12</td>
+    </tr>
+</table>
+O centro de massa do sistema de partículas representado pela tabela acima
+está localizado nas coordenadas xc = (0x1+0x4+1x8+1x12) ÷ (1+4+8+12) = 0,8 e yc =
+(0x1+1x4+1x8+0x12) ÷ (1+4+8+12) = 0,48. Ou seja, cada coordenada do centro de
+massa é uma média das posições das partículas ponderada por suas massas.
+Escreva um programa em JavaScript que:
+<ol type = "a">
+<li>Para um sistema de 4 partículas...
+<ul>
+<li>Leia as absissas de cada partícula em um vetor. Leia as ordenadas de cada partícula em outro vetor. Leia as massas de cada partícula e um terceiro vetor.</li>
+<li>Calcule as coordenadas x e y do centro de massa do sistema de
+partículas e mostre na tela.</li>
+</ul></li>
+<li>Repita o item “a” para um sistema de 1000 partículas.</li>
+</ol>
+</p>
+<hr>
+<script>
+function mostra(frase) {
+	document.write(frase + "<br>");
+}
+var x = new Array(4);
+var y = new Array(4);
+var m = new Array(4);
+var contador = 0;
+var aux = 0;
+var ajuda = 0;
+var abscissas;
+var ordenadas;
+var massas;
+while(contador<4) {
+	abscissas = parseInt(prompt("Informe o valor de x."));
+	x[contador] = abscissas;
+	contador++;
+}
+while(aux<4) {
+	ordenadas = parseInt(prompt("Informe o valor de y."));
+	y[aux] = ordenadas;
+	aux++;
+}
+while(ajuda<4) {
+	massas = parseInt(prompt("Informe o valor da massa."));
+	m[ajuda] = massas;
+	ajuda++;
+}
+var sos = 0;
+var multi;
+var somaX = 0;
+var somaM = 0;
+var meajuda = 0;
+while(sos<4) {
+	multi = x[sos]*m[sos];
+	somaX = somaX + multi;
+	somaM = somaM + m[meajuda] 
+	sos++;
+	meajuda++;
+}
+var Xc = somaX / somaM;
+var sos2 = 0;
+var multi2;
+var somay = 0;
+var somaM2 = 0;
+var ajudadnv = 0;
+while(sos2<4) {
+	multi2 = y[sos2]*m[sos2];
+	somay = somay + multi2;
+	somaM2 = somaM2 + m[ajudadnv] 
+	sos2++;
+	ajudadnv++;
+}
+var Yc = somay / somaM2;
+mostra("x: "+x);
+mostra("y: "+y);
+mostra("Massas: "+m);
+mostra("Xc: "+Xc);
+mostra("Yc: "+Yc);
+</script>

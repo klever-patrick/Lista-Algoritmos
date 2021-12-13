@@ -1,0 +1,40 @@
+<meta charset = "UTF-8">
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>38. A função declarada abaixo fornece a posição de um móvel em Movimento Retilíneo
+Uniformemente Variado recebendo como parâmetro sua posição inicial, velocidade
+inicial, aceleração e o instante de tempo no qual se deseja calcular tal resultado.
+<br>
+Utilizando a função “MRUV”, escreva um programa em JavaScript que:
+<ol type="a">
+<li>Leia pelo teclado a posição inicial, velocidade inicial, aceleração de um móvel.</li>
+<li>Mostre a posição do móvel num instante de tempo lido pelo teclado.</li>
+<li>Mostre a posição do mesmo móvel para os instantes 1s, 2s, 3s... até 100s.</li>
+</ol> 
+</p>
+<hr>
+<script>
+var s0 = parseFloat(prompt("Informe a posição inicial."));
+var v0 = parseFloat(prompt("Informe a velocidade inicial."));
+var a = parseFloat(prompt("Informe a aceleração."));
+var t = parseFloat(prompt("Informe o tempo"));
+function mostra(frase){
+    document.write(frase + "<br>");
+}
+function MRUV (s0, v0, a, t) {
+    var s = s0 + v0 * t + 0.5 * a * Math.pow(t,2);
+    return s;
+}
+mostra("Posição inicial: "+s0+"m");
+mostra("Velocidade inicial: "+v0+"m/s");
+mostra("Aceleração: "+a+"m/s²");
+mostra("Tempo: "+t+"s");
+mostra("Deslocamento: "+MRUV(s0, v0, a, t)+"m");
+var contador = 0;
+while (contador<100) {
+    contador++;
+    var t = contador;
+    mostra("Deslocamento no instante "+contador+"s: "+MRUV(s0, v0, a, t)+"m");
+}
+</script>

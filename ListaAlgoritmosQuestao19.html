@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>19. Escreva um programa que leia o valor do comprimento de 3 segmentos de reta e
+informe se é possível construir um triângulo a partir dos mesmos.</p>
+<hr>
+<script>
+var a = parseFloat(prompt("Digite o valor do primeiro comprimento."))
+var b = parseFloat(prompt("Digite o valor do segundo comprimento.")); 
+var c = parseFloat(prompt("Digite o valor do terceiro comprimento."));
+if (a==0 || b==0 || c==0) {
+    document.write("Os valores : a = "+a+", b = "+b+" e c = "+c+" não formam um triângulo.");
+}
+else {
+if ((a+b)>c && (a+c)>b && (b+c)>c) {
+    document.write("Os valores : a = "+a+", b = "+b+" e c = "+c+" formam um triângulo.");
+}
+else {
+    document.write("Os valores : a = "+a+", b = "+b+" e c = "+c+" não formam um triângulo.");
+}
+}
+</script>

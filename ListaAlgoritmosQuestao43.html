@@ -1,0 +1,92 @@
+<meta charset = "UTF-8">
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>43. Leia um vetor contendo a idade de 5 infratores, 
+tendo cada um dos infratores um número identificador correspondente a seu respectivo índice no vetor (0, 1, 2, 3...). 
+Em seguida leia outro vetor contendo a quantidade de infrações penais que cada respectivo indivíduo já cometeu.
+<ol type = "a">
+<li>Informe a quantidade de menores de idade.</li>
+<li>Informe o número de identificação e a idade do indivíduo que cometeu mais infrações.</li>
+<li>Informe a quantidade de infrações cometidas pelo indivíduo mais velho e pelo mais novo, respectivamente.</li>
+<li>Informe a diferença de idade do indivíduo que cometeu mais infrações para o que cometeu menos.</li>
+</ol>
+</p>
+<hr>
+<script>
+function mostra(frase) {
+	document.write(frase + "<br>");
+}
+var vetorIdade = new Array(5);
+var vetorInfracoes = new Array(5);
+var contador = 0;
+var aux = 0;
+var menores = 0;
+var infracoes;
+var idades;
+while(contador<5) {
+	idades = parseInt(prompt("Digite a idade de um infrator."));
+	infracoes = parseInt(prompt("Digite a quantidade de infrações."));
+	vetorIdade[contador] = idades;
+	vetorInfracoes[contador] = infracoes;
+	contador++;	
+	if (vetorIdade[aux]<18) {
+		menores++;
+	}
+	aux++;
+}
+mostra("Quantidade de infratores menores de idade: "+menores);
+var maior = 0;
+var auxiliar = 0;
+var Maiorinfrator;
+var idadeMaior;
+while (auxiliar<=4) {
+	if (vetorInfracoes[auxiliar] > maior) {
+		maior = vetorInfracoes[auxiliar];
+		idadeMaior = vetorIdade[auxiliar];
+		Maiorinfrator = auxiliar;
+	}
+	auxiliar++;
+}
+mostra("O infrator com número identificador igual a "+Maiorinfrator+" é o maior infrator, tem "+idadeMaior+" anos e cometeu "+maior+" infrações.");
+var idoso = 0;
+var ajuda = 0;
+var infracoesVelho;
+var identidadeVelho;
+while (ajuda<=4) {
+	if(vetorIdade[ajuda] > idoso) {
+		idoso = vetorIdade[ajuda];
+		infracoesVelho = vetorInfracoes[ajuda];
+		identidadeVelho = ajuda;
+	}
+	ajuda++;
+}
+mostra("O infrator com número identificador igual a "+identidadeVelho+" é o infrator mais velho, tem "+idoso+" anos e cometeu "+infracoesVelho+" infrações.");
+var jovem = 10000;
+var ajudante = 0;
+var infracoesNovo;
+var identidadeNovo;
+while (ajudante<=4) {
+	if(vetorIdade[ajudante] < jovem) {
+		jovem = vetorIdade[ajudante];
+		infracoesNovo = vetorInfracoes[ajudante];
+		identidadeNovo = ajudante;
+	}
+	ajudante++;
+}
+mostra("O infrator com número identificador igual a "+identidadeNovo+" é o infrator mais jovem, tem "+jovem+" anos e cometeu "+infracoesNovo+" infrações.");
+var menor = 10000;
+var sos = 0;
+var Menorinfrator;
+var idadeMenor;
+while (sos<=4) {
+	if (vetorInfracoes[sos] < menor) {
+		menor = vetorInfracoes[sos];
+		idadeMenor = vetorIdade[sos];
+		Menorinfrator = sos;
+	}
+	sos++;
+}
+var diferenca = idadeMaior - idadeMenor;
+mostra("Diferença de idade do indivíduo que cometeu mais infrações para o que menos cometeu: "+diferenca);
+</script>

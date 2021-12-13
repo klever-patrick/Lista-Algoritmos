@@ -1,0 +1,78 @@
+<meta charset = "UTF-8">
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>39. Uma sala de aula possui 10 alunos e elegerá uma chapa com 4 alunos para representá-la nos assuntos estudantis. A quantidade de chapas diferentes que podem
+ser formadas por <b>exatamente</b> 4 alunos combinando-se os 10 alunos da sala é dada por:<br>
+<br>
+C(10,4) = 10! / (10 - 4)!4!<br>
+<br>
+Os alunos também podem optar por se formar chapas de 1, 2, 3 ou 4 alunos.
+Nesse caso, a quantidade de chapas diferentes que podem ser formadas por <b>até 4</b>
+alunos desta sala é dada por:<br>
+<br>
+C(10,1) + C(10,2) + C(10,3) + C(10,4) = (10! / (10 - 1)!1!) + (10! / (10 - 2)!2!) + (10! / (10 - 3)!3!) + (10! / (10 - 4)!4!)<br>
+<br>
+De modo mais geral a quantidade de chapas diferentes que podem ser
+formadas por <b>até</b> n alunos em uma sala com um total de 10 alunos é dada por:<br>
+<br>
+C(10,1) + C(10,2) + C(10,3) + C(10,4) + ... C(10,n) = (10! / (10 - 1)!1!) + (10! / (10 - 2)!2!) + (10! / (10 - 3)!3!) + (10! / (10 - 4)!4!) + ... (10! / (10 - n)!n!), n≤10<br>
+<br>
+Sabendo disso, escreva um programa que cumpra os requisitos abaixo:
+<ol type = "a">
+<li>Escreva uma função que receba um número inteiro como parâmetro e retorne
+seu fatorial.</li>
+<li>Chame a função implementada no item 1 para calcular o fatorial de um número
+lido pelo teclado. O resultado apenas deve ser mostrado na tela após ter sido
+retornado.</li>
+<li>Utilize a função implementada no item 1 para calcular a quantidade de chapas
+com <b>exatamente</b> 4 alunos.</li>
+<li>Utilize a função implementada no item 1 para calcular a quantidade de chapas
+com <b>até</b> 4 alunos.</li>
+<li>Utilize a função implementada no item 1 para calcular a quantidade de chapas
+com <b>até</b> n alunos. O número n deve ser lido pelo teclado.</li>
+</ol>
+</p>
+<hr>
+<script>
+function mostra(frase) {
+   document.write(frase + "<br>");
+}
+var x = parseInt(prompt("Informe o número que será mostrado o fatorial."));
+function fatorial(x) {  
+	var fat = 1;
+	var contador = 1;
+	if (x == 0) {
+	   fat = 1;
+	}
+	else {	   
+		while (contador <=x){		
+			fat = fat*contador;
+			contador = contador + 1;
+		}
+	}
+	return fat;
+}
+mostra("O fatorial de "+x+" é "+fatorial(x));
+var quatroAlunos = fatorial(10) / (fatorial(10 - 4)*fatorial(4));
+var n = parseInt(prompt("Digite a quantidade de chapas."));
+function combinacao(n) {
+	var chapa = fatorial(10) / (fatorial(10 - n)*fatorial(n));
+	return chapa;
+}
+mostra("Quantidade de chapas com exatamente 4 alunos: "+quatroAlunos);
+var ateQuatroAlunos = combinacao(1) + combinacao(2) + combinacao(3) + combinacao(4);
+mostra("Quantidade de chapas com até 4 alunos: "+ateQuatroAlunos);
+var contador = 1;
+var soma = 0;
+while (n>10) {
+	alert("A quantidade de chapas deve ser menor ou igual a 10.");
+	var n = parseInt(prompt("Digite a quantidade de chapas."));
+}
+while (contador<=n) {
+	var chapas = combinacao(contador);
+	var soma = soma + chapas;
+	contador++
+}
+mostra("Quantidade de chapas com até "+n+" alunos: "+soma);
+</script>

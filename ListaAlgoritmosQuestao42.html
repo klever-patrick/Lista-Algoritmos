@@ -1,0 +1,24 @@
+<meta charset = "UTF-8">
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>42. Escreva um programa que leia um vetor e faça a inversão da ordem de seus elementos.</p>
+<hr>
+<script>
+var vetor = new Array(5);
+var contador = 0;
+var valores;
+while (contador<5) {
+	valores = parseInt(prompt("Digite um Número."));
+	vetor[contador] = valores;
+	contador++;
+}
+document.write("Vetor: "+vetor+"<br>");
+var aux = vetor[0];
+vetor[0] = vetor[4];
+vetor[4] = aux;
+var aux2 = vetor[1];
+vetor[1] = vetor[3];
+vetor[3] = vetor[1];
+document.write("Vetor invertido: "+vetor);
+</script>

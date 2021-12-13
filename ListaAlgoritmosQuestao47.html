@@ -1,0 +1,43 @@
+<meta charset="UTF-8">
+<h1>Algoritmos e Programação de Computadores<h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>47. Mediana é uma importante medida estatística acerca de um conjunto de dados,
+podendo ser representativa mesmo que alguns destes dados estejam contaminados
+por ruído ou sejam afetados por erros de medição.<br>
+A mediana é definida como o valor numérico que divide o conjunto de dados
+entre suas metades maior e menor. Por exemplo, no conjunto de dados {11,2,5,7,10} a
+mediana é 7, já que, quando ordenamos este conjunto e obtemos {2,5,7,11,10}, 7 é o
+valor central.<br>
+Escreva um programa que leia um conjunto de dados com 9 números
+inteiros e imprima na tela sua mediana.</p>
+<hr>
+<script>
+function mostra(frase) {
+    document.write(frase + "<br>");
+}
+var numeros = new Array(5);
+var contador = 0;
+var valores;
+var aux;
+var j = 4;
+while(contador<5) {
+    valores = parseInt(prompt("Digite um número."));
+    numeros[contador] = valores;
+    contador++;
+}
+mostra("Vetor: "+numeros);
+while (j>0) {
+	i=0;
+	while (i<j) {
+		if(numeros[i]>numeros[i+1]) {
+			aux = numeros[i];
+			numeros[i] = numeros[i+1];
+			numeros[i+1] = aux;
+		}
+		i++;
+	}
+	j--;
+}
+mostra("A mediana do vetor é: "+numeros[2]+".");
+</script>

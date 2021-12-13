@@ -1,0 +1,31 @@
+<meta charset = "UTF-8">
+<h1>Algortimos e programação de computadores</h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>37. A bitola dos tubos de PVC utilizados em instalações hidráulicas prediais possui alguns
+valores típicos como 20mm, 25mm, 32mm e 40mm, por exemplo. Todavia, sabe-se
+que, nem sempre, tais valores correspondem exatamente aos calculados em projeto
+para suportar determinadas demandas. O programa abaixo lê pelo teclado o valor de
+projeto da bitola de um tubo de PVC e imprime na tela a bitola imediatamente maior
+dentre aquelas encontradas no mercado. Implemente em C a sub-rotina (função)
+“estimar” de modo que o programa funcione conforme descrito.</p>
+<hr>
+<script>   
+var projeto = parseFloat(prompt("Digite o valor de projeto da bitola."));
+function estimar(projeto) {
+	if (projeto > 0 && projeto <= 20) {
+		var bitola = 20;
+    }
+    if (projeto > 20 && projeto <= 25) {
+        var bitola = 25;
+    }
+        if (projeto > 25 && projeto <= 32) {
+            var bitola = 32;
+        }
+            if (projeto > 32 && projeto <= 40) {
+                var bitola = 40;
+            }
+	return bitola;
+}
+document.write("Valor de projeto da bitola: "+estimar(projeto)+"mm.");
+</script>

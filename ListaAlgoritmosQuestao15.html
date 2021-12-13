@@ -1,0 +1,28 @@
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>15. Ano bissexto é aquele ao qual é acrescentado um dia extra com o objetivo ajustar o
+calendário ao movimento de translação da terra e aos eventos desencadeados por este
+movimento (fenômenos meteorológicos, estações do ano...). Um ano é bissexto
+quando é múltiplo de 4 e não é múltiplo de 100. A única exceção a esta regra são anos
+múltiplos de 400, os quais são bissextos. O presente ano de 2016 é bissexto. O
+próximo será 2020. O ano de 2100 não será bissexto, pois é múltiplo de 100, mas o
+ano de 2000 foi bissexto, pois é múltiplo de 400. Escreva um programa que pergunte
+ao usuário em que ano estamos e responda se o ano é ou não e bissexto.</p>
+<hr>
+<script>
+function mostra(frase) {
+    document.write(frase + "<br>");
+}
+// Entrada
+var ano = parseInt(prompt("Em que ano estamos?"));
+// Processamento
+if (ano%4 == 0 && ano%100 !=0 || ano%400 == 0) {
+    // Saída
+    mostra(ano+" é um ano bissexto.");
+}
+else {
+    // Saída
+    mostra(ano+" não é um ano bissexto.");
+}
+</script>

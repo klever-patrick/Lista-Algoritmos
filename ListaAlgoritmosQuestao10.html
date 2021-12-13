@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+<h1>Algoritmos e Programação de Computadores<h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>10. Um caixa eletrônico possui cédulas de 5, 10, 20, 50 e 100 reais. Escreva um programa
+que leia o valor a ser sacado e mostre a quantidade de cada cédula a ser utilizada de
+modo que o mínimo de notas seja retirado.</p>
+<hr>
+<script>
+function mostra(frase) {
+	document.write(frase + "<br>");
+}
+// Entrada
+var rs100, rs50, rs20, rs10, rs5;
+var sacado = parseInt(prompt("Informe o valor inteiro a ser sacado"));
+// Processamento
+rs100 = parseInt(sacado / 100);
+sacado = sacado - rs100 * 100;
+rs50 = parseInt(sacado / 50);
+sacado = sacado - rs50 * 50;
+rs20 = parseInt(sacado / 20);
+sacado = sacado - rs20 * 20;
+rs10 = parseInt(sacado / 10);
+sacado = sacado - rs10 * 10;
+rs5 = parseInt(sacado / 5);
+sacado = sacado - rs5 * 5;
+// Saída
+mostra("O número de notas de 100 reais é: "+ rs100);
+mostra("O número de notas de 50 reais é: "+ rs50);
+mostra("O número de notas de 20 reais é: "+ rs20);
+mostra("O número de notas de 10 reais é: "+ rs10);
+mostra("O número de notas de 5 reais é: "+ rs5);
+</script>

@@ -1,0 +1,62 @@
+<meta charset = "UTF-8">
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>46. Uma lanchonete organiza sua comanda no formato abaixo:
+	<table border="1">
+		<tr>
+			<td></td>
+			<td>Salgado</td>
+			<td>Misto</td>
+			<td>Refrigerante</td>
+			<td>Suco</td>
+			<td>Água</td>
+		</tr>
+		<tr>
+			<td>Quantidade</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Preço</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+Solicite que o usuário informe as quantidades e preço de cada um dos produtos na
+comanda e, em seguida, calcule e mostre o valor total da comanda.</p>
+<hr>
+<script>
+function mostra(frase) {
+	document.write(frase + "<br>");
+}
+var preco = new Array(5);
+var qtd = new Array(5);
+var contador = 0
+var precos;
+var qtds;
+while (contador<5) {
+	precos = parseInt(prompt("Digite um preço."));
+	qtds = parseInt(prompt("Digite a quantidade."));
+	preco[contador] = precos;
+	qtd[contador] = qtds;
+	contador++;
+}
+mostra("Preços: "+preco);
+mostra("Quantidade de cada produto: "+qtd);
+var soma = 0;
+var comanda;
+var aux = 0;
+while (aux<5) {
+	comanda = preco[aux] * qtd[aux];
+	soma = soma + comanda;
+	aux++;
+}
+mostra("Total da comanda: "+soma);
+</script>

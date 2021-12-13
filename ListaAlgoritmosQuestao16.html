@@ -1,0 +1,40 @@
+<meta charset="UTF-8">
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>16. Cícero, Prático e Heitor construíram 3 casas, uma para cada. Cada casa é capaz de
+suportar rajadas de vento de até certa velocidade. Escreva um programa que leia (em
+km/h) as velocidades máximas das rajadas de vento que cada casa é capaz de
+suportar e:
+<ol type="a">
+<li>Informe a maior velocidade suportada.</li>
+<li>Informe o nome do dono da casa que suporta a rajada de vento mais violenta</li>
+</ol>
+</p>
+<hr>
+<script>
+function mostra (frase) {
+    document.write(frase + "<br>");
+}
+// Entrada
+var Cicero = parseFloat(prompt("Qual a velocidade de rajadas de vento que a casa do Cícero aguenta?"));
+var Pratico = parseFloat(prompt("Qual a velocidade de rajadas de vento que a casa do Prático aguenta?"));
+var Heitor = parseFloat(prompt("Qual a velocidade de rajadas de vento que a casa do Heitor aguenta?"));
+// Saída
+mostra("A casa do Cícero aguenta rajadas de vento de até "+Cicero+"km/h.");
+mostra("A casa do Prático aguenta rajadas de vento de até "+Pratico+"km/h.");
+mostra("A casa do Heitor aguenta rajadas de vento de até "+Heitor+"km/h.");
+// Processamento
+if (Cicero > Pratico && Cicero > Heitor) {
+    // Saída
+    mostra("A casa que aguenta rajadas de vento mais fortes é a casa do: Cícero.");  
+}
+    if (Pratico > Heitor && Pratico > Cicero) {
+        // Saída
+        mostra("A casa que aguenta rajadas de vento mais fortes é a casa do: Prático.");  
+    }
+        if (Heitor > Cicero && Heitor > Pratico) {
+            // Saída
+            mostra("A casa que aguenta rajadas de vento mais fortes é a casa do: Heitor.");
+        }
+</script>

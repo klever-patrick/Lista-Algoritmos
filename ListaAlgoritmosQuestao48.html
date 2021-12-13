@@ -1,0 +1,63 @@
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>Ler o código do horário de uma disciplina da UNIFOR e informar os dias da semana emque haverá aula.
+Ex:<br>
+Código: M35CD<br>
+Haverá aula nos seguintes dias:<br>
+Terça-feira;<br>
+Quinta-feira.
+</p>
+<hr>
+<script>
+function mostra (frase) {
+    document.write(frase + "<br>");
+}
+var horario = prompt("Digite o código do horário da disciplina.");
+mostra("Código: "+horario);
+mostra("Haverá aula nos seguintes dias:");
+var segunda = 0;
+var terca = 0;
+var quarta = 0;
+var quinta = 0;
+var sexta = 0;
+var sabado = 0;
+for (var contador = 0; contador<=horario.length; contador++) {
+    if (horario[contador] == '2') {
+       segunda = 1;
+    }
+    if (horario[contador] == '3') {
+        terca = 1;
+    }
+    if (horario[contador] == '4') {
+        quarta = 1;
+    }
+    if (horario[contador] == '5') {
+        quinta = 1
+    }
+    if (horario[contador] == '6') {
+        sexta = 1;
+    }
+    if (horario[contador] == '7') {
+        sabado = 1;
+    }
+}
+if (segunda == 1) {
+    mostra("Segunda-feira.");
+}
+if (terca == 1) {
+    mostra("Terça-feira.");
+}
+if (quarta == 1) {
+    mostra("Quarta-feira.");
+}
+if (quinta == 1) {
+    mostra("Quinta-feira.");
+}
+if (sexta == 1) {
+    mostra("Sexta-feira.");
+}
+if (sabado == 1) {
+    mostra("Sábado.");
+}
+</script>         

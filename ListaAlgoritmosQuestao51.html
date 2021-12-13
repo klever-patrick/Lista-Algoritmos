@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>51. Faça um programa que leia o caminho de um arquivo pelo teclado e depois mostre o nome, a pasta e a extensão do arquivo.<br>
+Ex:<br>
+Caminho: C:/Documentos/Fotos/praia.jpg<br>
+Pasta: Documentos/Fotos<br>
+Nome: praia<br>
+Extensão: jpg<br>
+</p>
+<hr>
+<script>
+var caminho = prompt("Informe o caminho do arquivo.");
+document.write(caminho+"<br>");
+for (i=0; i<caminho.length; i++) {
+	if (caminho[i] == '.') {
+		ponto = i;
+	}
+	if (caminho[i] == '/') {
+		barra = i;
+	}
+}
+document.write("Pasta: ");
+for (y = 3; y<=barra-1; y++) {
+	document.write(caminho[y]);
+}
+document.write("<br>");
+document.write("Nome: ");
+for (i = barra + 1; i<ponto; i++) {
+	document.write(caminho[i]);
+}
+document.write("<br>");
+document.write("Extensão: ");
+for (var j = ponto+1; j<caminho.length; j++) {
+			document.write(caminho[j]);
+}
+</script>

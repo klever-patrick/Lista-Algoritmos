@@ -1,0 +1,29 @@
+<meta charset = "UTF-8">
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>34. O WCT (World Championchip Tour) é o campeonato promovido pela WSL (World Surf League) 
+no qual competem nomes da elite do surf mudial. Durante a competição, 
+5 juízes avaliam as ondas dos atletas com notas de 0 a 10, sendo descartadas as notas menor e maior. 
+Assim, a nota da banca é a média entre as 3 notas restantes. Escreva um programa que leia a nota dos 5 juízes e informe a nota final do competidor.</p>
+<hr>
+<script>
+var soma = 0;
+var maiorNota = 0;
+var menorNota = 10;
+var contador = 0;
+while (contador<5) {
+    contador++;
+    var nota = parseFloat(prompt("Digite uma nota."));
+    soma = soma + nota;
+    if (nota<menorNota) {
+        menorNota = nota;   
+    }
+    if (nota>maiorNota) {
+        maiorNota = nota;
+    }
+}
+var notasRestantes = soma - (maiorNota+menorNota);
+var notaDaBanca =  notasRestantes / 3;
+document.write("Nota da banca: "+notaDaBanca);
+</script>

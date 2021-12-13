@@ -1,0 +1,22 @@
+<meta charset = "UTF-8">
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>36. Escreva um programa que receba um número pelo teclado e mostre na tela seu fatorial.</p>
+<hr>
+<script>
+function mostra(frase) {
+   document.write(frase + "<br>");
+}
+var x = parseInt(prompt("Informe o número que será mostrado o fatorial"));
+function fatorial(x) {  
+	var fat = 1;
+	var contador = 1;	   
+		while (contador <=x){		
+			fat = fat*contador;
+			contador = contador + 1;
+		}
+	return fat;
+}
+mostra("O fatorial de "+x+" é "+fatorial(x));
+</script>

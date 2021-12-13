@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+<h1>Algoritmos e Programação de Computadores<h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>5. Considere o algoritmo representado pelo pseudocódigo abaixo:
+<ol type="a">
+<li>Leia A;</li>
+<li>Leia B;</li>
+<li>B recebe A - B;</li>
+<li>A recebe A - B;</li>
+<li>B recebe A + B;</li>
+<li>Mostre A;</li>
+<li>Mostre B;</li>
+</ol>
+Suponha que o usuário do algoritmo forneceu os valores 5 e 3 como entradas nessa
+exata ordem. Que valores serão mostrados respectivamente? Justifique sua resposta
+identificando os valores assumidos por ambas as variáveis após a execução de cada
+linha do pseudocódigo.<p>
+<hr>
+<script>
+function mostra(frase) {
+	document.write(frase + "<br>");
+}
+var A = parseFloat(prompt("Digite um valor para A: "));
+var B = parseFloat(prompt("Digite um valor para B: "));
+mostra("Valor inicial de A: "+A);
+mostra("Valor inicial de B: "+B);
+B = A - B;
+A = A - B;
+B = A + B;
+mostra("Valor final de A: "+A);
+mostra("Valor final de B: "+B);
+</script>

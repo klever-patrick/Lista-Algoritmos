@@ -1,0 +1,34 @@
+<meta charset = "UTF-8">
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>41. Escreva um código que cumpra os seguintes requisitos:
+<ol type = "a">
+<li>Calcule o valor do polinômio de grau 2 k0 + k1x + k2x^2. Os valores dos
+coeficientes k0, k1 e k2 bem como da variável x devem ser lidos pelo teclado.</li>
+<li>Calcule o valor do polinômio de grau n k0 + k1x + k2x^2+ k3x^3+ k4x^4 + ... knx^n. Os
+valores dos coeficientes k1, k2, k3, k4... kn , da variável x e do grau do polinômio n
+devem ser lidos pelo teclado.</li>
+</ol>
+</p>
+<hr>
+<script>
+function exponencial (b, e) {
+var contador = 0;
+var produto = 1;
+while (contador<e) { 
+	produto = produto * b; 
+	contador++;
+}
+return produto;
+}
+// item a
+var k0 = parseInt(prompt("Digite o valor do coeficiente k."));
+var k1 = parseInt(prompt("Digite o valor do coeficiente k."));
+var k2 = parseInt(prompt("Digite o valor do coeficiente k."));
+var x = parseInt(prompt("Digite o valor de x."));
+var resultado = k0 + k1*x + k2*exponencial(x,2);
+document.write("Resultado do polinômio de grau 2: "+resultado);
+// item b
+var grau = parseInt(prompt("Digite o grau do polinômio."));
+</script>

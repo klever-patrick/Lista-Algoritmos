@@ -1,0 +1,74 @@
+<meta charset="UTF-8">
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>14. Escreva um programa que receba as seguintes informações acerca de um carro:
+quantidade de portas, quantidade máxima de passageiros, comprimento do carro em
+metros, quilometragem do carro em km, velocidade máxima em km/h. O programa
+deve exibir as mensagens necessárias para fazer interface com o usuário. Após a
+leitura de todas as informações, exibir o relatório no seguinte formato:<br>
+<table border="1">
+    <tr>
+        <td>Portas: 2</td>
+        <td>Passageiros: 2</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Comprimento: 2,85m</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Quilometragem: 350km</td>
+        <td>Velocidade Máxima: 280km/h</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Novo: 0</td>
+        <td>Esportivo: 1</td>
+        <td>Sedan: 0</td>
+    </tr>
+</table>
+Obs1: O carro só é considerado novo se tiver até 5km.<br>
+Obs2: O carro é esportivo se sua velocidade máxima for pelo menos 240km/h e a
+quantidade máxima de passageiros for menor ou igual a 3 e a quantidade de portas for
+menor ou igual a 3.<br>
+Obs3: O carro é considerado do tipo "Sedan" se tiver comprimento maior que 4 metros
+e a quantidade de passageiros for maior ou igual que 3.</p>
+<hr>
+<script>
+function mostra (frase) {
+    document.write(frase + "<br>");
+}
+// Entrada
+var Portas = parseInt(prompt("Quantas portas tem o carro?"));
+var Passageiros = parseInt (prompt("Qual a quantidade máxima de passageiros do carro?"));
+var comprimento = parseFloat(prompt("Qual o comprimento do veículo em metros?"));
+var quilometragem = parseInt(prompt("Qual a quilometragem do carro em km?"));
+var velocidade = parseInt(prompt("Qual a velocidade máxima do carro em km/h?"));
+// Saída
+mostra("Portas: "+Portas);          
+mostra("Passageiros: "+Passageiros);
+mostra("Comprimento: "+comprimento+" m");
+mostra("Quuilometragem: "+quilometragem);
+mostra("Velocidade máxima: "+velocidade+" km");
+// Processamento
+if (quilometragem > 0 && quilometragem <= 5) {
+    mostra("Novo: 1");
+}
+else {
+    mostra("Novo: 0");
+}
+    if (velocidade > 0 && velocidade < 240 && Passageiros > 0 && Passageiros <= 3 && Portas > 0 && Portas <=3) {
+        mostra("Esportivos: 1");
+    }
+    else {
+        mostra("Esportivos: 0");  
+    }
+        if (comprimento > 4 && Portas > 0 && Portas <=3) {
+            mostra("Sedan: 1");
+        }
+        else{
+            mostra("Sedan: 0");
+        }
+</script>

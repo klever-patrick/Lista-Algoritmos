@@ -1,0 +1,78 @@
+<meta charset="UTF-8">
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Aluno: Patrick O. V. Monteiro</h2>
+<hr>
+<p>18. Suponha que o valor a pagar em uma conta de energia mensal seja função da
+quantidade de KWh consumidos e que, conforme mostra a tabela abaixo, a tarifa paga
+por KWh possui diferentes valores para cada classe consumidora.</p>
+<br>
+<table border="1">
+    <tr>
+        <th>Classe Consumidora</th>
+        <th>Tarifa por KWh</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1 real</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>80 centavos</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>50 centavos</td>
+    </tr>
+</table>
+<br>
+Sabendo que sobre o valor a pagar pela energia consumida incide um imposto de
+30%, faça um programa que:
+<ol type="a">
+    <li>Solicite que o usuário digite seu consumo de energia em KWh e armazena-o em
+UMA variável adequada;</li>
+    <li>Solicite que o usuário digite a classe consumidora à qual pertence (1,2 ou 3) e
+armazena-a em UMA variável adequada;</li>
+    <li>Atribua o valor correto da tarifa de acordo com a tabela acima;</li>
+    <li>Calcule o valor total a pagar levando em conta o consumo total, o valor da tarifa e o
+acréscimo de 30% sobre o valor a pagar pela energia consumida e imprima na tela
+corretamente o valor total a pagar.</li>
+</ol>
+<hr>
+<script>
+function mostra (frase) {
+    document.write(frase + "<br>");
+}
+var energia = parseInt(prompt("Digite seu consumo de energia em KWh"));
+var classe = parseInt(prompt("Digite a classe consumidora à qual pertence (1,2 ou 3)"));
+function classeConsumidora (classe) {
+    if (classe == 1) {
+        mostra("Energia consumida: "+energia+" KWh.");
+        mostra("Tarifa por KWh: 1 real.");
+        var valor1 = energia + (energia * 0.3);
+        mostra("Valor total a pagar: "+valor1+" reais.");
+    }
+        if (classe == 2) {
+            mostra("Energia consumida: "+energia+" KWh.");          
+            mostra("Tarifa por KWh: 80 centavos.");
+            energia2 = energia * 0.80;
+            var valor2 = energia2 + (energia * 0.3);
+            mostra("Valor total a pagar: "+valor2+" reais.");
+        }
+            if (classe == 3) {
+                mostra("Energia consumida: "+energia+" KWh.");  
+                mostra("Tarifa por KWh: 50 centavos.");
+                energia3 = energia * 0.50;
+                var valor3 = energia3 + (energia * 0.3);
+                mostra("Valor total a pagar: "+valor3+" reais.");
+            }
+}
+    if (classe >=1 && classe <=3) {
+        classeConsumidora(classe);
+    }
+        while (classe < 1 || classe > 3){ 
+            var classe = parseInt(prompt("Digite a classe consumidora à qual pertence (1,2 ou 3)"));
+            if (classe >=1 && classe <=3) {
+                classeConsumidora(classe);
+            }    
+        }  
+</script>

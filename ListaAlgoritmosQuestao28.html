@@ -1,0 +1,31 @@
+<meta charset="UTF-8">
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Patrick O. V. Monteiro</h2>
+<hr>
+<p>28. Número perfeito é um número inteiro cuja soma dos divisores naturais próprios (exceto
+o próprio número) é igual a ele mesmo. Por exemplo, 6 é um número perfeito, pois a
+soma de seus divisores naturais próprios, 1, 2 e 3 vale 6. Outro exemplo é o número
+28, pois 1+2+4+7+14 = 28. Escreva um programa que leia pelo teclado um número e
+informe se este é perfeito ou não.</p>
+<hr>
+<script>
+function mostra (frase) {
+    document.write(frase + "<br>");
+}
+var numero = parseInt(prompt("Digite um número"));
+var inicial = 0;
+var soma = 0;
+while (inicial < numero) {
+    if (numero%inicial == 0) {
+        mostra(inicial);
+		var soma = soma + inicial;
+	}	
+	var inicial = inicial + 1;	
+}
+if (soma == inicial) {
+	mostra(numero+" é um número perfeito");
+}
+else { 
+	mostra(numero+" não é um número perfeito");
+}
+</script>

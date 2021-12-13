@@ -1,0 +1,20 @@
+<meta charset="UTF-8">
+<h1>Algoritmos e programação de computadores</h1>
+<h2>Patrick O. V. Monteiro</h2>
+<hr>
+<p>27. Escreva um programa que leia um número e mostre na tela todos os seus divisores.</p>
+<hr>
+<script>
+function mostra(frase) {
+    document.write(frase + "<br>");
+}
+var numero = parseInt(prompt("Digite um número"));
+mostra("Número "+numero+" e seus divisores:");
+var inicial = 0;
+while (inicial <= numero) {
+    var inicial = inicial + 1;
+    if (numero%inicial == 0) {
+        mostra(inicial);
+    }
+}
+</script>
